@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
 <flowgorithm fileversion="4.2">
     <attributes>
-        <attribute name="name" value="cobaan1"/>
-        <attribute name="authors" value="ASUS"/>
+        <attribute name="name" value="aksj"/>
+        <attribute name="authors" value="JOICE"/>
         <attribute name="about" value=""/>
-        <attribute name="saved" value="2024-10-02 04:57:06 PM"/>
-        <attribute name="created" value="QVNVUztMQVBUT1AtR1JEUktTTFE7MjAyNC0xMC0wMjswMzo1MDo0MCBQTTsyNzEw"/>
-        <attribute name="edited" value="QVNVUztMQVBUT1AtR1JEUktTTFE7MjAyNC0xMC0wMjswNDo0NDo0NyBQTTsyO0pPSUNFO0JFRUxaRUJVQjsyMDI0LTEwLTAyOzAzOjMxOjA0IFBNO2Frc2pbMV0uZnByZzs2MzY3"/>
-        <attribute name="edited" value="QVNVUztMQVBUT1AtR1JEUktTTFE7MjAyNC0xMC0wMjswNDo1MTozMyBQTTs1O0FTVVM7TEFQVE9QLUdSRFJLU0xROzIwMjQtMTAtMDI7MDM6NTA6NDAgUE07Y29iYWFuMS5mcHJnOzY3OTI="/>
-        <attribute name="edited" value="QVNVUztMQVBUT1AtR1JEUktTTFE7MjAyNC0xMC0wMjswNDo1NzowNiBQTTsyOzI4Mjk="/>
+        <attribute name="saved" value="2024-10-02 08:13:54 PM"/>
+        <attribute name="created" value="Sk9JQ0U7QkVFTFpFQlVCOzIwMjQtMTAtMDI7MDM6MzE6MDQgUE07MjI4NA=="/>
+        <attribute name="edited" value="Sk9JQ0U7QkVFTFpFQlVCOzIwMjQtMTAtMDI7MDM6NDE6NTYgUE07MTtKT0lDRTtCRUVMWkVCVUI7MjAyNC0xMC0wMTswODoyMzo0NCBQTTtsb29wIHZlciAxLmZwcmc7NjE3Ng=="/>
+        <attribute name="edited" value="Sk9JQ0U7QkVFTFpFQlVCOzIwMjQtMTAtMDI7MDQ6MDE6MDMgUE07NDtKT0lDRTtCRUVMWkVCVUI7MjAyNC0wOS0yNzswOTo1ODoxMiBBTTtUMDIuZnByZzs1NDY3"/>
+        <attribute name="edited" value="Sk9JQ0U7QkVFTFpFQlVCOzIwMjQtMTAtMDI7MDg6MTM6NTQgUE07MjsyNDAz"/>
     </attributes>
     <function name="Main" type="None" variable="">
         <parameters/>
@@ -17,62 +17,68 @@
             <declare name="tahunterbit, stok" type="Integer" array="False" size=""/>
             <declare name="hargapembelian, minimummargin, rating" type="Real" array="False" size=""/>
             <assign variable="conclusion" expression="&quot;&quot;"/>
-            <input variable="isbn"/>
-            <while expression="isbn !=&quot;---&quot;">
-                <input variable="judul"/>
-                <input variable="penulis"/>
-                <input variable="tahunterbit"/>
-                <input variable="penerbit"/>
-                <input variable="formatbuku"/>
-                <input variable="hargapembelian"/>
-                <input variable="minimummargin"/>
-                <if expression="-(minimummargin/hargapembelian)&gt;0.4">
-                    <then>
-                        <assign variable="jenisdiskon" expression="&quot;Once in a lifetime&quot;"/>
-                    </then>
+            <assign variable="jenisdiskon" expression="&quot;&quot;"/>
+            <do expression="isbn!=&quot;---&quot;">
+                <input variable="isbn"/>
+                <if expression="isbn=&quot;---&quot;">
+                    <then/>
                     <else>
-                        <if expression="-(minimummargin/hargapembelian)&gt;0.2">
+                        <input variable="judul"/>
+                        <input variable="penulis"/>
+                        <input variable="tahunterbit"/>
+                        <input variable="penerbit"/>
+                        <input variable="formatbuku"/>
+                        <input variable="hargapembelian"/>
+                        <input variable="minimummargin"/>
+                        <if expression="-(minimummargin/hargapembelian)&gt;0.4">
                             <then>
-                                <assign variable="jenisdiskon" expression="&quot;Never come twice&quot;"/>
+                                <assign variable="jenisdiskon" expression="&quot;Once in a lifetime&quot;"/>
                             </then>
                             <else>
-                                <if expression="-(minimummargin/hargapembelian)&gt;0">
+                                <if expression="-(minimummargin/hargapembelian)&gt;0.2">
                                     <then>
-                                        <assign variable="jenisdiskon" expression="&quot;No Regret&quot;"/>
+                                        <assign variable="jenisdiskon" expression="&quot;Never come twice&quot;"/>
                                     </then>
-                                    <else/>
+                                    <else>
+                                        <if expression="-(minimummargin/hargapembelian)&gt;0">
+                                            <then>
+                                                <assign variable="jenisdiskon" expression="&quot;No Regret&quot;"/>
+                                            </then>
+                                            <else/>
+                                        </if>
+                                    </else>
                                 </if>
                             </else>
                         </if>
-                    </else>
-                </if>
-                <input variable="stok"/>
-                <input variable="rating"/>
-                <if expression="rating&gt;=4.7">
-                    <then>
-                        <assign variable="kualitas" expression="&quot;Best Pick&quot;"/>
-                    </then>
-                    <else>
-                        <if expression="rating&gt;=4.5 &amp;&amp; rating&lt;4.7">
+                        <input variable="stok"/>
+                        <input variable="rating"/>
+                        <if expression="rating&gt;=4.7">
                             <then>
-                                <assign variable="kualitas" expression="&quot;Must Read&quot;"/>
+                                <assign variable="kualitas" expression="&quot;Best Pick&quot;"/>
                             </then>
                             <else>
-                                <if expression="rating&gt;=4.0 &amp;&amp; rating&lt;4.5">
+                                <if expression="rating&gt;=4.5 &amp;&amp; rating&lt;4.7">
                                     <then>
-                                        <assign variable="kualitas" expression="&quot;Recommend&quot;"/>
+                                        <assign variable="kualitas" expression="&quot;Must Read&quot;"/>
                                     </then>
                                     <else>
-                                        <if expression="rating&gt;=3.0 &amp;&amp; rating&lt;4.0">
+                                        <if expression="rating&gt;=4.0 &amp;&amp; rating&lt;4.5">
                                             <then>
-                                                <assign variable="kualitas" expression="&quot;Average&quot;"/>
+                                                <assign variable="kualitas" expression="&quot;Recommend&quot;"/>
                                             </then>
                                             <else>
-                                                <if expression="rating&lt;3.0">
+                                                <if expression="rating&gt;=3.0 &amp;&amp; rating&lt;4.0">
                                                     <then>
-                                                        <assign variable="kualitas" expression="&quot;Low&quot;"/>
+                                                        <assign variable="kualitas" expression="&quot;Average&quot;"/>
                                                     </then>
-                                                    <else/>
+                                                    <else>
+                                                        <if expression="rating&lt;3.0">
+                                                            <then>
+                                                                <assign variable="kualitas" expression="&quot;Low&quot;"/>
+                                                            </then>
+                                                            <else/>
+                                                        </if>
+                                                    </else>
                                                 </if>
                                             </else>
                                         </if>
@@ -80,16 +86,18 @@
                                 </if>
                             </else>
                         </if>
+                        <if expression="jenisdiskon=&quot;Once in a lifetime&quot; &amp;&amp; kualitas=&quot;Best Pick&quot;">
+                            <then>
+                                <assign variable="conclusion" expression="&quot;The ultimate best&quot;"/>
+                            </then>
+                            <else>
+                                <assign variable="conclusion" expression="&quot;---&quot;"/>
+                            </else>
+                        </if>
+                        <output expression="isbn &amp; &quot;|&quot; &amp; judul &amp; &quot;|&quot; &amp; penulis &amp; &quot;|&quot; &amp; tahunterbit &amp; &quot;|&quot; &amp; penerbit &amp; &quot;|&quot; &amp; formatbuku &amp; &quot;|&quot; &amp; hargapembelian &amp; &quot;|&quot; &amp; minimummargin &amp; &quot;|&quot; &amp; stok &amp; &quot;|&quot; &amp; tofixed(rating,1) &amp; &quot;|&quot; &amp; kualitas &amp; &quot;|&quot; &amp; jenisdiskon &amp; &quot;|&quot; &amp; conclusion" newline="True"/>
                     </else>
                 </if>
-                <if expression="jenisdiskon=&quot;Once in a lifetime&quot; &amp;&amp; kualitas=&quot;Best Pick&quot;">
-                    <then>
-                        <assign variable="conclusion" expression="&quot;The ultimate best&quot;"/>
-                    </then>
-                    <else/>
-                </if>
-                <output expression="isbn &amp; &quot;|&quot; &amp; judul &amp; &quot;|&quot; &amp; penulis &amp; &quot;|&quot; &amp; tahunterbit &amp; &quot;|&quot; &amp; penerbit &amp; &quot;|&quot; &amp; formatbuku &amp; &quot;|&quot; &amp; hargapembelian &amp; &quot;|&quot; &amp; minimummargin &amp; &quot;|&quot; &amp; stok &amp; &quot;|&quot; &amp; tofixed(rating,1) &amp; &quot;|&quot; &amp; kualitas &amp; &quot;|&quot; &amp; jenisdiskon &amp; &quot;|&quot; &amp; conclusion" newline="True"/>
-            </while>
+            </do>
         </body>
     </function>
 </flowgorithm>
