@@ -13,7 +13,7 @@ public class T03 {
         String penulis;
         int tahunTerbit;
         String penerbit;
-        String formatBukuElektranik;
+        String formatBuku;
         double hargaPembelian;
         double minimumMargin;
         int stok;
@@ -34,7 +34,7 @@ public class T03 {
                 } else {
                     penerbit = penerbit;
                 }
-                formatBukuElektranik = input.nextLine();
+                formatBuku = input.nextLine();
                 hargaPembelian = Double.parseDouble(input.nextLine());
                 minimumMargin = Double.parseDouble(input.nextLine());
                 if (minimumMargin > 0) {
@@ -78,7 +78,7 @@ public class T03 {
                 } else {
                     kategoriBuku = "---";
                 }
-                System.out.println(iSBN + "|" + judul + "|" + penulis + "|" + tahunTerbit + "|" + penerbit + "|" + formatBukuElektranik + "|" + hargaPembelian + "|" + minimumMargin + "|" + stok + "|" + toFixed(rating,1) + "|" + kategori + "|" + kategoriDiskon + "|" + kategoriBuku);
+                System.out.println(iSBN + "|" + judul + "|" + penulis + "|" + tahunTerbit + "|" + penerbit + "|" + formatBuku + "|" + hargaPembelian + "|" + minimumMargin + "|" + stok + "|" + toFixed(rating,1) + "|" + kategori + "|" + kategoriDiskon + "|" + kategoriBuku);
             }
         } while (!iSBN.equals("---"));
     }

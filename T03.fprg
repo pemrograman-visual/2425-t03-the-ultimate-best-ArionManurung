@@ -4,11 +4,11 @@
         <attribute name="name" value="T03"/>
         <attribute name="authors" value="Rache"/>
         <attribute name="about" value=""/>
-        <attribute name="saved" value="2024-10-02 09:09:47 PM"/>
+        <attribute name="saved" value="2024-10-02 09:19:16 PM"/>
         <attribute name="created" value="UmFjaGU7TEFQVE9QLUdCNkZCOUtROzIwMjMtMTAtMDU7MTA6MjQ6NDAgQU07Mjc4NQ=="/>
         <attribute name="edited" value="UmFjaGU7TEFQVE9QLUdCNkZCOUtROzIwMjMtMTAtMDU7MTE6MzM6NDcgQU07MTtSYWNoZTtMQVBUT1AtR0I2RkI5S1E7MjAyMy0wOS0xNDswMjo0MToyNSBQTTtKdXJhZ2FuIGJ1a3UgMi5mcHJnOzc1NzI="/>
         <attribute name="edited" value="UmFjaGU7TEFQVE9QLUdCNkZCOUtROzIwMjMtMTAtMDU7MDk6Mzc6MTEgUE07MTY7Mjk3Mg=="/>
-        <attribute name="edited" value="QVNVUztMQVBUT1AtR1JEUktTTFE7MjAyNC0xMC0wMjswOTowOTo0NyBQTTsxOzI4MzU="/>
+        <attribute name="edited" value="QVNVUztMQVBUT1AtR1JEUktTTFE7MjAyNC0xMC0wMjswOToxOToxNiBQTTsyOzI4MzM="/>
     </attributes>
     <function name="Main" type="None" variable="">
         <parameters/>
@@ -18,7 +18,7 @@
             <declare name="Penulis" type="String" array="False" size=""/>
             <declare name="TahunTerbit" type="Integer" array="False" size=""/>
             <declare name="Penerbit" type="String" array="False" size=""/>
-            <declare name="FormatBukuElektranik" type="String" array="False" size=""/>
+            <declare name="FormatBuku" type="String" array="False" size=""/>
             <declare name="HargaPembelian" type="Real" array="False" size=""/>
             <declare name="MinimumMargin" type="Real" array="False" size=""/>
             <declare name="Stok" type="Integer" array="False" size=""/>
@@ -42,7 +42,7 @@
                                 <assign variable="Penerbit" expression="Penerbit"/>
                             </else>
                         </if>
-                        <input variable="FormatBukuElektranik"/>
+                        <input variable="FormatBuku"/>
                         <input variable="HargaPembelian"/>
                         <input variable="MinimumMargin"/>
                         <if expression="MinimumMargin&gt;0">
@@ -113,7 +113,7 @@
                                 <assign variable="KategoriBuku" expression="&quot;---&quot;"/>
                             </else>
                         </if>
-                        <output expression="ISBN &amp; &quot;|&quot; &amp; Judul &amp; &quot;|&quot; &amp; Penulis &amp; &quot;|&quot; &amp; TahunTerbit &amp; &quot;|&quot; &amp; Penerbit &amp; &quot;|&quot; &amp; FormatBukuElektranik &amp; &quot;|&quot; &amp; HargaPembelian &amp; &quot;|&quot; &amp; MinimumMargin &amp; &quot;|&quot; &amp; Stok &amp; &quot;|&quot; &amp; Rating &amp; &quot;|&quot; &amp; Kategori &amp; &quot;|&quot; &amp; KategoriDiskon &amp; &quot;|&quot; &amp; KategoriBuku" newline="True"/>
+                        <output expression="ISBN &amp; &quot;|&quot; &amp; Judul &amp; &quot;|&quot; &amp; Penulis &amp; &quot;|&quot; &amp; TahunTerbit &amp; &quot;|&quot; &amp; Penerbit &amp; &quot;|&quot; &amp; FormatBuku &amp; &quot;|&quot; &amp; HargaPembelian &amp; &quot;|&quot; &amp; MinimumMargin &amp; &quot;|&quot; &amp; Stok &amp; &quot;|&quot; &amp; ToFixed(Rating,1) &amp; &quot;|&quot; &amp; Kategori &amp; &quot;|&quot; &amp; KategoriDiskon &amp; &quot;|&quot; &amp; KategoriBuku" newline="True"/>
                     </then>
                     <else/>
                 </if>
